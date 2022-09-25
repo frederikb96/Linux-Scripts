@@ -10,5 +10,5 @@ perms = -1
 times = true
 links = true
 retry = 1
-log = false
+log = true
 logfile = /home/freddy/Nextcloud/Computer/Pi_Backup_Log/nextcloud_unison.log

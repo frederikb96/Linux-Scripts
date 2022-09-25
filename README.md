@@ -17,4 +17,5 @@ fi
 - Link unison to ~/.unison/my-profiles
   - call unison profiles with `unison my-profile/my-profile-name.prf`
 - Link templates to ~/Templates/my
+- Link tikzit to ~/Programs/tikzit/my-tikzit
 
