@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=
+Exec=gnome-terminal -- doLLaptop.sh
+Name=LLaptop

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=reboot
+Exec=gnome-terminal -- bash -c 'pkexec grub-reboot 2; echo "Continue with reboot?"; read; reboot'
+Name=Windows Boot

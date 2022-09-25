@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=matlab
+Exec=doLMatlabPc.sh
+Name=LMatlabPC

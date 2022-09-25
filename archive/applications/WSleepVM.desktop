@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=windows
+Exec=dovmwindowssleep.sh
+Name=VSleepWindows

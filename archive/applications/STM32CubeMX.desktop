@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=cubeMX
+Exec=/usr/local/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX %f
+Name=STM32CubeMX

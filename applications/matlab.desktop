@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=matlab
+Exec=my-matlab.py %F
+Name=Matlab

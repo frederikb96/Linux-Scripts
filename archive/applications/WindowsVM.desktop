@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=windows
+Exec=vmplayer /home/freddy/vmware/Windows2/Windows2.vmx
+Name=VWindows

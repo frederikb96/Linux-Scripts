@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=hibernation
+Exec=gnome-terminal -- sudo systemctl hibernate
+Name=Hibernation

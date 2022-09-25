@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=reboot
+Exec=gnome-terminal -- bash -c 'my-util; read'
+Name=Util Scripts
