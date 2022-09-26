@@ -14,7 +14,7 @@ fi
 ```
 
 - Link the applications folder you want to use to something like ~/.local/share/applications/my-applications
-- **not working** the icons folder to ~/.local/share/icons/my-icons
+- the icons folder to ~/.icons
 - Link unison to ~/.unison/my-profiles
   - call unison profiles with `unison my-profile/my-profile-name.prf`
 - Link templates to ~/Templates/my
