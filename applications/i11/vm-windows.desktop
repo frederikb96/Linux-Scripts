@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Windows
+Comment=Start Windows VM
+Icon=virtualbox-vbox
+Exec=virtualboxvm --startvm Windows10 --normal
+Actions=
+Categories=Office;

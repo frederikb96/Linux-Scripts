@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Tailscale up
+Icon=nm-vpn-standalone-lock-symbolic
+Exec=pkexec tailscale up --reset
+Actions=
+Categories=Network;

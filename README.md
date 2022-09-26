@@ -13,7 +13,7 @@ if [ -d "$HOME/.local/bin/my-bin" ] ; then
 fi
 ```
 
-- Link the applications folder to ~/.local/share/applications/my-applications
+- Link the applications folder you want to use to something like ~/.local/share/applications/my-applications
 - **not working** the icons folder to ~/.local/share/icons/my-icons
 - Link unison to ~/.unison/my-profiles
   - call unison profiles with `unison my-profile/my-profile-name.prf`

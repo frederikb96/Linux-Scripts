@@ -4,16 +4,18 @@
 % \tikzstyle{NAME}=[PROPERTY LIST]
 
 % Node styles
-\tikzstyle{dot red}=[fill=red, draw=red, shape=circle]
-\tikzstyle{box red}=[fill=white, draw=red, shape=rectangle, align=center]
+\tikzstyle{circle black}=[fill=none, draw=black, shape=circle]
+\tikzstyle{dot black small}=[fill=black, draw=none, shape=circle, minimum size=5pt, inner sep=0pt, outer sep=0pt]
+\tikzstyle{dot black}=[fill=black, draw=none, shape=circle]
+\tikzstyle{dot red}=[fill=red, draw=none, shape=circle]
+\tikzstyle{dot green}=[fill=green, draw=none, shape=circle]
+\tikzstyle{dot blue}=[fill=blue, draw=none, shape=circle]
+\tikzstyle{dot orange}=[fill=orange, draw=none, shape=circle]
+\tikzstyle{box black}=[fill=none, draw=black, shape=rectangle, align=center]
+\tikzstyle{box red}=[fill=none, draw=red, shape=rectangle, align=center]
 \tikzstyle{brakeL}=[align=left]
 \tikzstyle{brakeC}=[align=center]
 \tikzstyle{rotate90}=[rotate=90]
-\tikzstyle{dot orange}=[fill=orange, draw=none, shape=circle]
-\tikzstyle{dot blue}=[fill=blue, draw=none, shape=circle]
-\tikzstyle{dot green}=[fill=green, draw=none, shape=circle]
-\tikzstyle{dot r black}=[fill=none, draw=black, shape=circle]
-\tikzstyle{rec r black}=[fill=none, draw=black, shape=rectangle]
 
 % Edge styles
 \tikzstyle{hidden}=[-, draw=none, tikzit draw=black]
@@ -35,3 +37,4 @@
 \tikzstyle{dash blue}=[-, draw=blue, dashed]
 \tikzstyle{dash t1 black}=[-, draw=black, dashed, thick]
 \tikzstyle{dash t1 blue}=[-, draw=blue, dashed, thick]
+\tikzstyle{p black gray}=[-, draw=black, fill={rgb,255: red,191; green,191; blue,191}]
