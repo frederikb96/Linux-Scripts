@@ -3,6 +3,6 @@ Version=1.1
 Type=Application
 Name=Boxcryptor
 Icon=network-wireless-encrypted
-Exec=bash /home/frederik/Programs/Boxcryptor_Portable_Linux64_2.36.309/Boxcryptor_Portable.sh
+Exec=bash /home/frederik/Programs/Boxcryptor_Portable_Linux64_2.37.347/Boxcryptor_Portable.sh
 Actions=
 Categories=Office;
