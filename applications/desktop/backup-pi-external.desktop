@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Backup Pi External
+Icon=backups-app-symbolic
+Exec=gnome-terminal -- bash -c 'unison my-profiles/pi-external; echo "done"; read'
