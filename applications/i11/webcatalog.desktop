@@ -3,4 +3,4 @@ Version=1.1
 Type=Application
 Name=Webcatalog
 Icon=webcatalog
-Exec=/home/freddy/Programs/WebCatalog.AppImage
+Exec=/home/frederik/Programs/WebCatalog.AppImage
