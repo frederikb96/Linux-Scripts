@@ -2,7 +2,7 @@
 Version=1.1
 Type=Application
 Name=Webcatalog
-Icon=gnome-web-browser
+Icon=webcatalog
 Exec=/home/freddy/Programs/WebCatalog.AppImage
 Actions=
 Categories=X-GNOME-Other;
