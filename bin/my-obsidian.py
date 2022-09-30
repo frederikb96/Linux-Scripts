@@ -27,7 +27,7 @@ def symlink_force(target, link_name):
 def main():
     if len(sys.argv) > 1:
         current_file = sys.argv[1]
-        if not current_file.__contains__(".md") and not current_file.__contains__(".txt"):
+        if not current_file.__contains__(".md"):
             exit("Not a markdown file")
 
         current_dir = os.path.dirname(current_file)
