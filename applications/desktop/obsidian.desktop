@@ -3,4 +3,4 @@ Version=1.1
 Type=Application
 Name=Obsidian
 Icon=obsidian
-Exec=/home/freddy/Programs/Obsidian.AppImage
+Exec=/home/freddy/Programs/Obsidian.AppImage %u
