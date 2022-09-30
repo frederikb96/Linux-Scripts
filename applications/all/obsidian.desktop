@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Obsidian
+Icon=obsidian
+Exec=bash -c "/home/$(id -un 1000)/Programs/Obsidian.AppImage %u"
+Terminal=false
+StartupWMClass=obsidian
+MimeType=text/html;x-scheme-handler/obsidian;

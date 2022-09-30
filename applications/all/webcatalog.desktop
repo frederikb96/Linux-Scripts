@@ -3,6 +3,6 @@ Version=1.1
 Type=Application
 Name=Webcatalog
 Icon=webcatalog
-Exec=/home/freddy/Programs/WebCatalog.AppImage
+Exec=bash -c "/home/$(id -un 1000)/Programs/WebCatalog.AppImage"
 Actions=
 Categories=X-GNOME-Other;
