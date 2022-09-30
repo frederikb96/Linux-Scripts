@@ -15,6 +15,15 @@ def clean_tmp():
                 os.remove(os.path.join(root, file))
         break
 
+
+def symlink_force(target, link_name):
+    if os.path.exists(link_name):
+        os.remove(link_name)
+        os.symlink(target, link_name)
+    else:
+        os.symlink(target, link_name)
+
+
 def main():
     if len(sys.argv) > 1:
         current_file = sys.argv[1]
@@ -36,18 +45,15 @@ def main():
                 break
 
         if vault_path is None:
-            clean_tmp()
+            # clean_tmp()
 
             current_file_link = tmp_dir + os.path.basename(current_file)
             current_file_link_quote = quote(current_file_link, safe='')
-            os.symlink(current_file, current_file_link)
+            symlink_force(current_file, current_file_link)
             subprocess.Popen(["xdg-open", "obsidian://open?path=" + current_file_link_quote])
         else:
             current_file_quote = quote(current_file, safe='')
             subprocess.Popen(["xdg-open", "obsidian://open?path=" + current_file_quote])
-            #vault_path_quote = quote(vault_path, safe='')
-            #current_file_name_quote = quote(os.path.basename(current_file), safe='')
-            #subprocess.Popen(["xdg-open", "obsidian://open?vault=" + vault_path_quote + "&file=" + current_file_name_quote])
 
     else:
         subprocess.Popen(["xdg-open", "obsidian://open"])
