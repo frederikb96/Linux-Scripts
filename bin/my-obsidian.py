@@ -6,6 +6,7 @@ from urllib.parse import quote
 
 
 tmp_dir = "/home/"+os.getlogin()+"/Documents/ObsidianTmp/"
+config_path = "/home/" + os.getlogin() + "/.config/obsidian/obsidian.json"
 
 
 def clean_tmp():
@@ -13,6 +14,9 @@ def clean_tmp():
         for file in files:
             if file.__contains__(".md"):
                 os.remove(os.path.join(root, file))
+        for directory in dirs:
+            if directory.__contains__(".md"):
+                os.remove(os.path.join(root, directory))
         break
 
 
@@ -44,14 +48,23 @@ def main():
             else:
                 break
 
+        if vault_path is not None:
+            config_file = open(config_path, "r")
+            config_txt = config_file.read()
+            config_file.close()
+            if not config_txt.__contains__(vault_path):
+                vault_path = None
+
         if vault_path is None:
-            # clean_tmp()
 
             current_dir = os.path.dirname(current_file)
             current_file_link = tmp_dir + os.path.basename(current_dir) + "_" + os.path.basename(current_file)
             current_file_link_quote = quote(current_file_link + "/" + os.path.basename(current_file), safe='')
             symlink_force(current_dir, current_file_link)
-            subprocess.Popen(["xdg-open", "obsidian://open?path=" + current_file_link_quote])
+            process_obsidian = subprocess.Popen(["xdg-open", "obsidian://open?path=" + current_file_link_quote])
+            process_obsidian.wait()
+            # Not working, since xdg-open is creating another independent subprocess
+            # clean_tmp()
         else:
             current_file_quote = quote(current_file, safe='')
             subprocess.Popen(["xdg-open", "obsidian://open?path=" + current_file_quote])
