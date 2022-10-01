@@ -47,9 +47,10 @@ def main():
         if vault_path is None:
             # clean_tmp()
 
-            current_file_link = tmp_dir + os.path.basename(current_file)
-            current_file_link_quote = quote(current_file_link, safe='')
-            symlink_force(current_file, current_file_link)
+            current_dir = os.path.dirname(current_file)
+            current_file_link = tmp_dir + os.path.basename(current_dir) + "_" + os.path.basename(current_file)
+            current_file_link_quote = quote(current_file_link + "/" + os.path.basename(current_file), safe='')
+            symlink_force(current_dir, current_file_link)
             subprocess.Popen(["xdg-open", "obsidian://open?path=" + current_file_link_quote])
         else:
             current_file_quote = quote(current_file, safe='')
