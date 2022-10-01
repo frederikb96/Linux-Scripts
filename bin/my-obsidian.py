@@ -80,7 +80,8 @@ def main():
             if os.path.isdir(tmp_dir):
                 # Not part of any vault, symlink to tmp vault and open there
                 current_dir = os.path.dirname(current_file)
-                current_file_link = tmp_dir + os.path.basename(current_dir) + "_" + os.path.basename(current_file)
+                current_file_link = \
+                    tmp_dir + os.path.basename(current_dir) + "_" + os.path.basename(current_file).split('.')[0]
                 # Need to change path to URI format
                 current_file_link_quote = quote(current_file_link + "/" + os.path.basename(current_file), safe='')
                 # Symlink directory of file to tmp vault
