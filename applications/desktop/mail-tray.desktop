@@ -4,6 +4,6 @@ Type=Application
 Name=Mail Tray
 Comment=Starts mail and sends it to tray.
 Icon=evolution-symbolic
-Exec=bash -c "if [ $( pgrep kdocker ) ] ; then evolution; else kdocker -q -- evolution -c mail; fi"
+Exec=bash -c "if [ $( pgrep -x evolution ) ] ; then GDK_BACKEND=x11 evolution; else QT_QPA_PLATFORM=xcb kdocker -q -- GDK_BACKEND=x11 evolution -c mail; fi"
 Actions=
 Categories=Email;Utility;
