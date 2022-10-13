@@ -39,11 +39,11 @@ def symlink_force(target, link_name):
 
 def main():
     always_link = True
-    if len(sys.argv) > 2 and sys.argv[1] == "off":
+    if len(sys.argv) > 1 and sys.argv[1] == "off":
         always_link = False
 
     # Check if the script is called with any argument (file path)
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 2 or (len(sys.argv) > 1 and always_link):
         # Only proceed if file is a markdown file
         if len(sys.argv) > 2:
             current_file = sys.argv[2]
