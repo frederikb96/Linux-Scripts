@@ -40,8 +40,10 @@ echo -e "\n--------------------"
 echo "Pi4 Nextcloud:"
 echo -e "--------------------\n"
 unison my-profiles/pi-nextcloud > /dev/null
-if [ $? -ne 0 ]; then statusExit=1; fi
+statusUnison=$?
+if [ $statusUnison -ne 0 ]; then statusExit=1; fi
 echo "done"
+echo "$statusUnison"
 } >> ${adressBackup}tmp.log 2>&1
 
 
