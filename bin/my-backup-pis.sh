@@ -26,15 +26,19 @@ echo -e "\n--------------------"
 echo "Pi3 Docker:"
 echo -e "--------------------\n"
 ssh root@pi3.lan 'tar cvf - /opt/docker' > /home/freddy/Backup/pi3/docker.tar
-if [ $? -ne 0 ]; then statusExit=1; fi
+statusUnison=$?
+if [ $statusUnison -ne 0 ]; then statusExit=1; fi
 echo "done"
+echo "$statusUnison"
 
 echo -e "\n--------------------"
 echo "Pi4 Docker:"
 echo -e "--------------------\n"
 ssh root@pi4.lan 'tar cvf - /opt/docker' > /home/freddy/Backup/pi4/docker.tar
-if [ $? -ne 0 ]; then statusExit=1; fi
+statusUnison=$?
+if [ $statusUnison -ne 0 ]; then statusExit=1; fi
 echo "done"
+echo "$statusUnison"
 
 echo -e "\n--------------------"
 echo "Pi4 Nextcloud:"
