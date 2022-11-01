@@ -16,6 +16,7 @@ statusExit=0
 adressBackup="/home/freddy/Nextcloud/Computer/Pi_Backup_Log/"
 adressError="/home/freddy/Desktop/"
 
+
 #--------------------
 # Main
 #--------------------
@@ -24,7 +25,7 @@ adressError="/home/freddy/Desktop/"
 echo -e "\n--------------------"
 echo "Pi3 Docker:"
 echo -e "--------------------\n"
-ssh root@pi3.lan kopia snapshot create /opt/docker
+ssh root@pi3.lan 'tar cvf - /opt/docker' > /home/freddy/Backup/pi3/docker.tar
 statusUnison=$?
 if [ $statusUnison -ne 0 ]; then statusExit=1; fi
 echo "done"
@@ -33,25 +34,7 @@ echo "$statusUnison"
 echo -e "\n--------------------"
 echo "Pi4 Docker:"
 echo -e "--------------------\n"
-ssh root@pi4.lan kopia snapshot create /opt/docker
-statusUnison=$?
-if [ $statusUnison -ne 0 ]; then statusExit=1; fi
-echo "done"
-echo "$statusUnison"
-
-echo -e "\n--------------------"
-echo "Pi4 Nextcloud DB:"
-echo -e "--------------------\n"
-ssh root@pi4.lan 'source /opt/docker/nextcloud/.env && docker exec mariadb mysqldump --all-databases -p${MARIADB_MYSQL_ROOT_PASSWORD} > /databases/docker-nextcloud-mariadb.dump && kopia snapshot create /databases/docker-nextcloud-mariadb.dump && rm /databases/docker-nextcloud-mariadb.dump'
-statusUnison=$?
-if [ $statusUnison -ne 0 ]; then statusExit=1; fi
-echo "done"
-echo "$statusUnison"
-
-echo -e "\n--------------------"
-echo "Pi4 Synapse DB:"
-echo -e "--------------------\n"
-ssh root@pi4.lan 'docker exec postgres-synapse pg_dumpall -U synapse > /databases/docker-synapse-postgres.dump && kopia snapshot create /databases/docker-synapse-postgres.dump && rm /databases/docker-synapse-postgres.dump'
+ssh root@pi4.lan 'tar cvf - /opt/docker' > /home/freddy/Backup/pi4/docker.tar
 statusUnison=$?
 if [ $statusUnison -ne 0 ]; then statusExit=1; fi
 echo "done"
@@ -60,23 +43,13 @@ echo "$statusUnison"
 echo -e "\n--------------------"
 echo "Pi4 Nextcloud:"
 echo -e "--------------------\n"
-ssh root@pi4.lan kopia snapshot create /mnt/data/nextcloud
+unison my-profiles/pi-nextcloud > /dev/null
 statusUnison=$?
 if [ $statusUnison -ne 0 ]; then statusExit=1; fi
 echo "done"
 echo "$statusUnison"
-
-echo -e "\n--------------------"
-echo "Pi3 Status:"
-echo -e "--------------------\n"
-ssh root@pi3.lan kopia snapshot list
-
-echo -e "\n--------------------"
-echo "Pi4 Status:"
-echo -e "--------------------\n"
-ssh root@pi4.lan kopia snapshot list
-
 } >> ${adressBackup}tmp.log 2>&1
+
 
 #--------------------
 # Log Processing
