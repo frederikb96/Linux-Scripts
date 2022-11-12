@@ -82,6 +82,9 @@ until (fastboot devices | grep fastboot); do
 done
 
 echo "Flash the patched image, shall we start?"
+read
+echo "Really?"
+read
 
 fastboot flash boot ./patched-boot.img
 
