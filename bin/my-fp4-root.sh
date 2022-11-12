@@ -13,18 +13,38 @@ clean_up_phone() {
   adb shell rm /sdcard/Download/patched-boot.img
 }
 
+check_adb() {
+	echo "Check if adb root is running"
+	until adb root; do
+		if ((SECONDS > 60)); then
+		    echo "Timeout: No devices connected!"
+		    exit 1
+		fi
+		echo "Phone is not in adb root mode...waiting..."
+		sleep 2
+	done
+}
+
+check_fastboot() {
+	echo "Wait until device is in fastboot mode"
+	SECONDS=0
+	until (fastboot devices | grep fastboot); do
+
+		if ((SECONDS > 60)); then
+		    echo "Timeout, device not in fastboot mode"
+		    clean_up_pc
+		    exit 2
+		fi
+
+		echo "Phone is not in fastboot mode yet. Waiting..."
+		sleep 5
+	done
+}
+
 #-------------------------------------------------
 # Device connected?
 #-------------------------------------------------
-echo "Check if adb root is running"
-until adb root; do
-    if ((SECONDS > 60)); then
-        echo "Timeout: No devices connected!"
-        exit 1
-    fi
-    echo "Phone is not in adb root mode...waiting..."
-    sleep 2
-done
+check_adb
 
 #-------------------------------------------------
 # Create temporary directory
@@ -40,6 +60,7 @@ echo "Get image file from fp4 repo"
 a=$(curl https://images.ecloud.global/stable/FP4/)
 b=${a%%FP4.zip*}"FP4.zip"
 c="IMG""${b#*href=IMG}"
+echo "Get" "https://images.ecloud.global/stable/FP4/""$c"
 curl --location "https://images.ecloud.global/stable/FP4/""$c" --output ./fp4-img.zip
 unzip ./fp4-img.zip -d ./fp4-img
 
@@ -67,21 +88,33 @@ clean_up_phone
 echo "Reboot to bootloader"
 adb reboot bootloader
 
-echo "Wait until device is in fastboot mode"
-SECONDS=0
-until (fastboot devices | grep fastboot); do
+check_fastboot
 
-    if ((SECONDS > 60)); then
-        echo "Timeout, device not in fastboot mode"
-        clean_up_pc
-        exit 2
-    fi
+echo "Boot the patched image, shall we start?"
+read
+echo "Really?"
+read
 
-    echo "Phone is not in fastboot mode yet. Waiting..."
-    sleep 5
-done
+fastboot boot ./patched-boot.img
 
-echo "Flash the patched image, shall we start?"
+
+#-------------------------------------------------
+# Device connected?
+#-------------------------------------------------
+check_adb
+
+echo
+echo "Check if everything is working...."
+echo
+
+echo "Ready and all fine?"
+read
+echo "Ok lets go"
+adb reboot bootloader
+check_fastboot
+
+echo
+echo "Really flash the patched image, shall we start?"
 read
 echo "Really?"
 read
