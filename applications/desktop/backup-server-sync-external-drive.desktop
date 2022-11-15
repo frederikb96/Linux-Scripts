@@ -3,4 +3,4 @@ Version=1.1
 Type=Application
 Name=Backup Server Sync External Drive
 Icon=backups-app-symbolic
-Exec=gnome-terminal -- bash -c 'kopia repository connect filesystem --path /home/freddy/Backup/backup-server && kopia repository sync-to filesystem --path /media/freddy/Backup_Freddy/backup-server; echo "done"; read'
+Exec=gnome-terminal -- bash -c 'sudo kopia repository sync-to filesystem --path /mnt/backup-external/backup-server; echo "done"; read'
