@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.1
 Type=Application
-Name=Update Ubuntu Server
+Name=Update Server
 Icon=
 Exec=gnome-terminal -- bash -c 'ssh root@ubuntu-server.lan "cd /root/scripts && ./my-update.sh"; echo "done"; read'
