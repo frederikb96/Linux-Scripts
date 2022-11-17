@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1.1
-Type=Application
-Name=Obsidian Always
-Icon=obsidian
-Exec=my-obsidian.py %f
-Terminal=false
