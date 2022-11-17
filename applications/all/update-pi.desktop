@@ -3,4 +3,4 @@ Version=1.1
 Type=Application
 Name=Update Pi
 Icon=
-Exec=gnome-terminal -- bash -c 'ssh root@pi.lan "cd /root/scripts && ./my-update.sh"; echo "done"; read'
+Exec=gnome-terminal -- bash -c 'ssh root@pi "cd /root/scripts && ./my-update.sh"; echo "done"; ssh root@pi'
