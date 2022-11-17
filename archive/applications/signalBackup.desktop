@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=false
-Icon=
-Exec=gnome-terminal -- bash -c "dosignal.py && read"
-Name=SignalBackup

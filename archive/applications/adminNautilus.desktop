@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=false
-Icon=nautilus
-Exec=nautilus admin:///
-Name=Admin Nautilus

@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=false
-Icon=eagle
-Exec=/opt/eagle-9.6.2/eagle %f
-Name=Eagle
