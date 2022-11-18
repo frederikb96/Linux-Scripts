@@ -3,6 +3,6 @@ Version=1.1
 Type=Application
 Name=Wiki Publish
 Icon=notes-app-symbolic
-Exec=gnome-terminal -- bash -c 'cd /home/freddy/Nextcloud/Notes/Technical/public-repo && ./all.sh && ssh root@ubuntu-server.lan "(cd /opt/docker/hugo && ./all.sh)"; read'
+Exec=gnome-terminal -- bash -c 'cd /home/freddy/Nextcloud/Notes/Technical-public && ./all.sh && ssh root@ubuntu-server.lan "(cd /opt/docker/hugo && ./all.sh)"; read'
 Actions=
 Categories=X-GNOME-Other;

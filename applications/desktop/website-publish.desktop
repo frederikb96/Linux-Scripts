@@ -3,6 +3,6 @@ Version=1.1
 Type=Application
 Name=Website Publish
 Icon=notes-app-symbolic
-Exec=gnome-terminal -- bash -c 'cd /home/freddy/Nextcloud/Notes/Website/public-repo && ./all.sh && ssh root@ubuntu-server.lan "(cd /opt/docker/hugo-main && ./all.sh)"; read'
+Exec=gnome-terminal -- bash -c 'cd ~/Nextcloud/Notes/Website-public && ./all.sh && ssh root@ubuntu-server.lan "(cd /opt/docker/hugo-main && ./all.sh)"; read'
 Actions=
 Categories=X-GNOME-Other;
