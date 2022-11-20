@@ -1,2 +1,2 @@
 #!/bin/bash
-kopia repository connect filesystem --path /home/freddy/Backup/backup-server
+sudo kopia repository connect filesystem --path /mnt/backup/backup-server
