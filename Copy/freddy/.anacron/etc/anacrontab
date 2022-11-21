@@ -1,0 +1,11 @@
+# .anacron/etc/anacrontab: configuration file for anacron user 
+
+# See anacron(8) and anacrontab(5) for details. 
+SHELL=/bin/sh 
+PATH=/home/freddy/.local/bin/my-bin:/home/freddy/.local/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/home/freddy
+LOGNAME=freddy 
+
+# period delay job-identifier command
+1	2	flatpak.weekly	bash -c 'echo "flat" && sudo flatpak update && read'
+1	2	snap.weekly	bash -c 'echo "snap" && sudo snap refresh && read'
