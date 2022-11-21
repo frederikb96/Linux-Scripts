@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.1
-Type=Application
-Name=Mail Tray
-Comment=Starts mail and sends it to tray for wayland.
-Icon=evolution-symbolic
-Exec=bash -c "if [ $( pgrep -x evolution ) ] ; then GDK_BACKEND=x11 evolution; else my-mail-tray-wayland.sh; fi"
-Actions=
-Categories=Email;Utility;
