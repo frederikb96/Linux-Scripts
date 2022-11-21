@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Name=Dict.cc
+Comment=Web App
+Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON=/home/frederik/.local/share/ice/icons/Dictcc.png firefox-esr --class WebApp-Dictcc9334 --profile /home/frederik/.local/share/ice/firefox/Dictcc9334 --no-remote https://dict.cc'
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/frederik/.local/share/ice/icons/Dictcc.png
+Categories=GTK;WebApps;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Dictcc9334
+StartupNotify=true
+X-WebApp-Browser=Firefox Extended Support Release
+X-WebApp-URL=https://dict.cc
+X-WebApp-CustomParameters=
+X-WebApp-Isolated=true

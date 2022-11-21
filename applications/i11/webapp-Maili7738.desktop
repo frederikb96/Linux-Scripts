@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Name=Mail i11
+Comment=Web App
+Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON=/home/frederik/.local/share/ice/icons/Maili.png firefox-esr --class WebApp-Maili7738 --profile /home/frederik/.local/share/ice/firefox/Maili7738 --no-remote https://mail.rwth-aachen.de/owa/#path=/calendar/view/WorkWeek'
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/frederik/.local/share/ice/icons/Maili.png
+Categories=GTK;WebApps;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Maili7738
+StartupNotify=true
+X-WebApp-Browser=Firefox Extended Support Release
+X-WebApp-URL=https://mail.rwth-aachen.de/owa/#path=/calendar/view/WorkWeek
+X-WebApp-CustomParameters=
+X-WebApp-Isolated=true
