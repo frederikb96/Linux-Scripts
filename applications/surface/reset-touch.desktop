@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.1
-Type=Application
-Name=Reset Touch
-Icon=touch-disabled-symbolic
-Exec=pkexec iptsd-reset-sensor
-Actions=
-Categories=X-GNOME-Other;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Touch
+Icon=touch-disabled-symbolic
+Exec=gnome-terminal -- bash -c 'sudo systemctl stop iptsd.service; sleep 2; sudo killall iptsd; sudo rmmod ipts; sleep 5; sudo modprobe ipts; sleep 2; sudo systemctl start iptsd.service'
+Actions=
+Categories=X-GNOME-Other;

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.1
-Type=Application
-Name=Disable Touch
-Comment=A small descriptive blurb about this application.
-Icon=touch-disabled-symbolic
-Exec=pkexec systemctl stop iptsd.service
-Actions=
-Categories=X-GNOME-Other;
